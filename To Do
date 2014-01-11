@@ -1,0 +1,12 @@
+Next tasks - 
+1. Add Mile Page : Inserts a Walk/Run/Cycling event into the DB.
+
+2. User Module - 
+  a. Add User table in DB
+  b. User ID in Miles Table.
+  c. Register Page 
+  d. Password Encryption
+  d. Login Page
+  e. Authentication 
+  
+3. Charts of Miles - daily, weekly, monthly, yearly, Filtering by type. 
