@@ -15,3 +15,6 @@ Day 1. 8th Jan, 2014:
 
 Day 2. 9th Jan, 2014: 
 - Netbean project is checked in into MilesToGo Repository.
+ 
+Day 3, 11th Jan, 2014: 
+- Created Add Mile Page : Inserts a Walk/Run/Cycling/Swimming event into the DB. 
