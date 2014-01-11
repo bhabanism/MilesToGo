@@ -5,10 +5,10 @@ I am working on this project to learn stuffs. I am using J2EE, MVC architecture 
 I started it yesterday (8th Jan, 2014) and the idea is to make a website where the user can log his miles for various activities like Cycling, Running, etc. 
 
 System Details - 
--App Server : Glassfish 3.1.2
--DB Server : Java DB
--IDE : Netbeans 7.4
--JDK : 1.7.0.45
+- App Server : Glassfish 3.1.2
+- DB Server : Java DB
+- IDE : Netbeans 7.4
+- JDK : 1.7.0.45
 
 
 Tasks done till now -
