@@ -8,4 +8,6 @@ and open the template in the editor.
     Author     : Mishra
 */
 
-
+.row {
+    padding: 10px;
+}

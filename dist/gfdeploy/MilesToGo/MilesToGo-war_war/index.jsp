@@ -3,7 +3,6 @@
     Created on : Jan 8, 2014, 10:44:42 PM
     Author     : Mishra
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,7 +23,8 @@
          </div>
         <div class="row">
             <div class="col-lg-3"><aside>Left Nav</aside></div>
-            <div class="col-lg-9"> <article> Welcome to Miles To Go! </article></div>
+            <div class="col-lg-9"> <article> Welcome to Miles To Go! </article></div>           
+            
         </div>
       
       

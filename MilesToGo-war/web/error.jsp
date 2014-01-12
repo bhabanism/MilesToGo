@@ -18,7 +18,7 @@
        <div class="row">            
             <ul class="nav nav-tabs">
                 <li><a href="/MilesToGo-war/index.jsp">Mile To Go</a></li>
-                <li class="active"><a href="/MilesToGo-war/MileController?CMD=ADD_EVENT">Add an Event</a></li>
+                <li><a href="/MilesToGo-war/MileController?CMD=ADD_EVENT">Add an Event</a></li>
                 <li><a href="/MilesToGo-war/MileController?CMD=HISTORY">View History</a></li>
             </ul>            
          </div>

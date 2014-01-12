@@ -38,7 +38,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Miles.findByDistance", query = "SELECT m FROM Miles m WHERE m.distance = :distance"),
     @NamedQuery(name = "Miles.findByTitle", query = "SELECT m FROM Miles m WHERE m.title = :title"),
     @NamedQuery(name = "Miles.findByLocation", query = "SELECT m FROM Miles m WHERE m.location = :location"),
-    @NamedQuery(name = "Miles.findByDescription", query = "SELECT m FROM Miles m WHERE m.description = :description")})
+    @NamedQuery(name = "Miles.findMaxId", query = "SELECT max(m.id) FROM Miles m"),
+    @NamedQuery(name = "Miles.findByDescription", query = "SELECT m FROM Miles m WHERE m.description = :description")})    
 public class Miles implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
