@@ -25,3 +25,6 @@ Day 2. 9th Jan, 2014:
  
 Day 3, 11th Jan, 2014: 
 - Created Add Mile Page : Inserts a Walk/Run/Cycling/Swimming event into the DB. 
+- 
+Day 4, 12th Jan, 2014: 
+Started Tracking tasks using issues and milestones system, no more logging in Readme.
