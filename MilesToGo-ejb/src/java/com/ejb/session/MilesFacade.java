@@ -29,4 +29,15 @@ public class MilesFacade extends AbstractFacade<Miles> implements MilesFacadeLoc
         super(Miles.class);
     }
     
+    public Short getMaxId() {
+        Short id = 0;
+        try {
+         id = (Short)em.createNamedQuery("Miles.findMaxId").
+                 getResultList().get(0);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return id;
+    }
+    
 }

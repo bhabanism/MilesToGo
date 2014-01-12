@@ -25,9 +25,12 @@
                 <li class="active"><a href="/MilesToGo-war/MileController?CMD=HISTORY">View History</a></li>
             </ul>            
          </div>
-        
+          <div class="row">
+            <div class="col-lg-3"><aside>Left Nav</aside></div>
+            <div class="col-lg-9"> <article>  
+       
         <% 
-             MileClient mClient = new MileClient();
+            MileClient mClient = new MileClient();
             List<MileData> mDataList = mClient.getMileHistory();
             %><table class='table table-hover table-responsive'>
                 <thead> 
@@ -51,6 +54,6 @@
             %>
             </tbody>
             </table>
-        
+        </article></div> </div>
     </body>
 </html>

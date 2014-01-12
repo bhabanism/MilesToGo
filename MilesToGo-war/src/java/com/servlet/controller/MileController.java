@@ -10,7 +10,8 @@ import com.mile.client.MileClient;
 import com.mile.data.MileData;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,6 +34,7 @@ public class MileController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+            
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -42,10 +44,20 @@ public class MileController extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
              if(command!=null && command.equals("HISTORY")) {
                 response.sendRedirect("/MilesToGo-war/history.jsp");  
-            } else {
-                response.sendRedirect("/MilesToGo-war/error.jsp");                
+            } else if(command!=null && command.equals("ADD_EVENT")) {
+                response.sendRedirect("/MilesToGo-war/addEventForm.jsp?CMD=ADD_EVENT_FORM_SUBMIT");  
+            } else if(command!=null && command.equals("ADD_EVENT_FORM_SUBMIT")) {
+                boolean status = processAddEventForm(request);
+                if(status) {
+                    response.sendRedirect("/MilesToGo-war/history.jsp"); 
+                } else {
+                    response.sendRedirect("/MilesToGo-war/error.jsp");   
+                }
+                
+                //response.sendRedirect("/MilesToGo-war/addEventForm.jsp");  
+            }else {
+                //response.sendRedirect("/MilesToGo-war/error.jsp");                
             }
-          
         }
     }
 
@@ -87,5 +99,46 @@ public class MileController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+    
+    private boolean processAddEventForm(HttpServletRequest request) {
+        try {
+            MileData mData = new MileData();
+            
+            
+            String sDate = request.getParameter("date");
+            SimpleDateFormat sdfDate = new SimpleDateFormat("MM/dd/yyyy");
+            Date date = sdfDate.parse(sDate);         
+            mData.setMileDate(date);
+            
+            SimpleDateFormat sdfTime = new SimpleDateFormat("h:mm a");
+            String sStartTime = request.getParameter("starttime");
+            String sEndTime = request.getParameter("endtime");
+            Date dStartTime = sdfTime.parse(sStartTime);
+            Date dEndTime = sdfTime.parse(sEndTime);
+            mData.setStartTime(dStartTime);
+            mData.setEndTime(dEndTime);
+            mData.setTitle(request.getParameter("title"));
+            mData.setMileType(request.getParameter("type"));   
+            
+            Float fDistance = Float.parseFloat(request.getParameter("distance"));            
+            mData.setDistance(fDistance.intValue());
+            mData.setLocation(request.getParameter("location"));
+            mData.setDescription(request.getParameter("description"));
+            MileClient mClient = new MileClient(); 
+            //Short id = 1;
+            
+            Short id = mClient.getMaxId();
+            int intId = id.intValue()+1;
+            Short newId = new Short(""+intId);
+            mData.setId(newId);
+            mClient.createEvent(mData);    
+            return true;
+        } catch(Exception e) {
+            System.err.println("Failed to add Miles : "+e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+        
+    }
 
 }

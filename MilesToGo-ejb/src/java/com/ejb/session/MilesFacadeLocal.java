@@ -31,4 +31,6 @@ public interface MilesFacadeLocal {
 
     int count();
     
+    Short getMaxId();
+    
 }

@@ -38,7 +38,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Miles.findByDistance", query = "SELECT m FROM Miles m WHERE m.distance = :distance"),
     @NamedQuery(name = "Miles.findByTitle", query = "SELECT m FROM Miles m WHERE m.title = :title"),
     @NamedQuery(name = "Miles.findByLocation", query = "SELECT m FROM Miles m WHERE m.location = :location"),
-    @NamedQuery(name = "Miles.findByDescription", query = "SELECT m FROM Miles m WHERE m.description = :description")})
+    @NamedQuery(name = "Miles.findByDescription", query = "SELECT m FROM Miles m WHERE m.description = :description"),
+    @NamedQuery(name = "Miles.findMaxId", query = "SELECT max(m.id) FROM Miles m")})
 public class Miles implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -89,7 +90,19 @@ public class Miles implements Serializable {
         this.id = id;
     }
 
-    public Miles(Short id, String mileType, Date mileDate, Date startTime, Date endTime, int distance, String title) {
+    public Miles(Short id, String mileType, Date mileDate, Date startTime, Date endTime, int distance, String title, String location, String description) {
+        this.id = id;
+        this.mileType = mileType;
+        this.mileDate = mileDate;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.distance = distance;
+        this.title = title;
+        this.location = location;
+        this.description = description;
+    }
+    
+     public Miles(Short id, String mileType, Date mileDate, Date startTime, Date endTime, int distance, String title) {
         this.id = id;
         this.mileType = mileType;
         this.mileDate = mileDate;

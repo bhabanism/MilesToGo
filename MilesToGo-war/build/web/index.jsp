@@ -22,7 +22,11 @@
                 <li><a href="/MilesToGo-war/MileController?CMD=HISTORY">View History</a></li>
             </ul>            
          </div>
-       <p> Welcome to Miles To Go! </p>
+        <div class="row">
+            <div class="col-lg-3"><aside>Left Nav</aside></div>
+            <div class="col-lg-9"> <article> Welcome to Miles To Go! </article></div>
+        </div>
+      
       
     </body>
 </html>
