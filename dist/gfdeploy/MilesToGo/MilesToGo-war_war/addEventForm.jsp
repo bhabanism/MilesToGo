@@ -95,8 +95,7 @@
                             <div class="row">
                                  <div class="col-lg-2"><label class="control-label"></label></div>
                                  <div class="col-lg-10"><button type="button" id="addEventButton" class="btn btn-info">Log an Event</button></div>                       
-                            </div>  
-                            
+                            </div>                              
                         </form>
                      </div>
                 </article>

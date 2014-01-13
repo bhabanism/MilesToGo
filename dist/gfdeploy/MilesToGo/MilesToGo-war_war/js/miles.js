@@ -10,20 +10,23 @@
   });
 
     
-function validateEventForm() {  
+function validateEventForm() {
+    var isValid = true;
     $(".numeric").each(function() {
         if(!$.isNumeric($(this).val())) {
             $(this).focus();
+            isValid = false;
             return false;
         }
     });
     $(".required").each(function() {
       if(!$(this).val()) {
           $(this).focus();
+          isValid = false;
           return false;
       }
     });
-    
+    return isValid;
 }
 
 function submitForm() {    
