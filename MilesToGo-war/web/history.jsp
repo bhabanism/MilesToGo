@@ -4,6 +4,8 @@
     Author     : Mishra
 --%>
 
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
 <%@page import="com.mile.data.MileData"%>
 <%@page import="com.mile.client.MileClient"%>
@@ -34,19 +36,43 @@
             List<MileData> mDataList = mClient.getMileHistory();
             %><table class='table table-hover table-responsive'>
                 <thead> 
-                    <tr>
-                        <td> Activity Type </td>
+                    <tr>                        
+                        <td> Event Name </td>
+                        <td> Event Type </td>
+                        <td> Date </td>
                         <td> Distance </td>
+                        <td> Time Taken </td>
+                        <td> Speed </td>
                         <td> Location </td>
                     </tr> 
                 </thead> 
                 <tbody>
                 <%
             for(MileData mData : mDataList) {
+              
+                SimpleDateFormat sdfDate = new SimpleDateFormat("MMM dd, yyyy");
+                SimpleDateFormat sdfTime = new SimpleDateFormat("h:mm a");
+                String date = sdfDate.format(mData.getMileDate());
+                
+                String startTime = sdfTime.format(mData.getStartTime());
+                String endTime = sdfTime.format(mData.getEndTime());
+                int msToHour = 3600000;
+                long hoursTaken = (mData.getEndTime().getTime() - mData.getStartTime().getTime())/msToHour;
+                float distance = mData.getDistance();      
+                float speed = 0;
+                if(hoursTaken>0) {
+                    speed = distance/hoursTaken;
+                }
+                DecimalFormat df = new DecimalFormat();
+                df.setMaximumFractionDigits(2);
                 %>
                 <tr>
+                    <td> <%=mData.getTitle()%> </td>
                     <td> <%=mData.getMileType()%> </td>
-                    <td> <%=mData.getDistance()%> </td>
+                    <td> <%=date%> </td>
+                    <td> <%=distance%> km</td>
+                    <td> <%=hoursTaken%> hours</td>
+                    <td> <%= df.format(speed)%> km/hr</td>
                     <td> <%=mData.getLocation()%> </td>
                 </tr>
                 <%
