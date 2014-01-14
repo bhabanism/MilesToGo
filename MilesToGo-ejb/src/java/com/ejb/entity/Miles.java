@@ -6,6 +6,7 @@
 
 package com.ejb.entity;
 
+import com.mile.data.MileData;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -89,18 +90,6 @@ public class Miles implements Serializable {
     public Miles(Short id) {
         this.id = id;
     }
-    
-    public Miles(Short id, String mileType, Date mileDate, Date startTime, Date endTime, int distance, String title, String location, String description) {
-        this.id = id;
-        this.mileType = mileType;
-        this.mileDate = mileDate;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.distance = distance;
-        this.title = title;
-        this.location = location;
-        this.description = description;
-    }
 
     public Miles(Short id, String mileType, Date mileDate, Date startTime, Date endTime, int distance, String title) {
         this.id = id;
@@ -110,6 +99,18 @@ public class Miles implements Serializable {
         this.endTime = endTime;
         this.distance = distance;
         this.title = title;
+    }
+
+    public Miles(MileData mData) {
+        this.id = mData.getId();
+        this.mileType = mData.getMileType();
+        this.mileDate = mData.getMileDate();
+        this.startTime = mData.getStartTime();
+        this.endTime = mData.getEndTime();
+        this.distance = mData.getDistance();
+        this.title = mData.getTitle();
+        this.location = mData.getLocation();
+        this.description = mData.getDescription();
     }
 
     public Short getId() {

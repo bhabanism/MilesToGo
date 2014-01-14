@@ -11,6 +11,7 @@
         <title>Mile To Go</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/milesnavbar.css" rel="stylesheet">
+        <link href="css/miles.css" rel="stylesheet">
         
         <script src="js/jquery-latest.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -33,7 +34,10 @@
                         <li class="active"><a href="/MilesToGo-war/index.jsp">Miles To Go</a></li>
                         <li><a href="/MilesToGo-war/MileController?CMD=ADD_EVENT">Add an Event</a></li>
                         <li><a href="/MilesToGo-war/MileController?CMD=HISTORY">View History</a></li>
-                    </ul>            
+                    </ul>    
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/MilesToGo-war/MileController?CMD=REGISTER_FORM">Register</a></li>
+                    </ul>
                  </div>
             </nav>
             <div class="row">

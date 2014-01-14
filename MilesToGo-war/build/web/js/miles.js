@@ -10,10 +10,10 @@
   });
 
     
-function validateEventForm() {
+function validateForm() {
     var isValid = true;
     $(".numeric").each(function() {
-        if(!$.isNumeric($(this).val())) {
+        if($(this).val() && !$.isNumeric($(this).val())) {
             $(this).focus();
             isValid = false;
             return false;
@@ -29,15 +29,20 @@ function validateEventForm() {
     return isValid;
 }
 
-function submitForm() {    
-    if(validateEventForm()) {
-        $("#addEvent").submit();
-     }
-}
  $(function() {
     $("#addEventButton").click(function() { 
-        submitForm();
+        if(validateForm()) {
+            $("#addEventForm").submit();
+         }
     });   
+    $("#registerUserButton").click(function() { 
+        if(validateForm()) {
+            $("#registerUserForm").submit();
+         }
+    });   
+    
+    
+    
 });   
     
 

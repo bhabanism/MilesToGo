@@ -7,7 +7,9 @@
 package com.servlet.controller;
 
 import com.mile.client.MileClient;
+import com.mile.client.UserClient;
 import com.mile.data.MileData;
+import com.mile.data.UserData;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -45,18 +47,25 @@ public class MileController extends HttpServlet {
              if(command!=null && command.equals("HISTORY")) {
                 response.sendRedirect("/MilesToGo-war/history.jsp");  
             } else if(command!=null && command.equals("ADD_EVENT")) {
-                response.sendRedirect("/MilesToGo-war/addEventForm.jsp?CMD=ADD_EVENT_FORM_SUBMIT");  
+                response.sendRedirect("/MilesToGo-war/addEventForm.jsp");  
+            } else if(command!=null && command.equals("REGISTER_FORM")) {
+                response.sendRedirect("/MilesToGo-war/registerUser.jsp");  
             } else if(command!=null && command.equals("ADD_EVENT_FORM_SUBMIT")) {
                 boolean status = processAddEventForm(request);
                 if(status) {
                     response.sendRedirect("/MilesToGo-war/history.jsp"); 
                 } else {
-                    //response.sendRedirect("/MilesToGo-war/error.jsp");   
+                    response.sendRedirect("/MilesToGo-war/error.jsp");   
                 }
-                
-                //response.sendRedirect("/MilesToGo-war/addEventForm.jsp");  
-            }else {
-                //response.sendRedirect("/MilesToGo-war/error.jsp");                
+            } else if(command!=null && command.equals("REGISTER_USER")) {
+                boolean status = processRegistrationForm(request);
+                if(status) {
+                    response.sendRedirect("/MilesToGo-war/index.jsp"); 
+                } else {
+                    response.sendRedirect("/MilesToGo-war/error.jsp");   
+                }
+            } else {
+                response.sendRedirect("/MilesToGo-war/error.jsp");                
             }
         }
     }
@@ -100,11 +109,45 @@ public class MileController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
     
+    private boolean processRegistrationForm(HttpServletRequest request) {
+        try { 
+            UserData uData = new UserData();            
+            uData.setUsername(request.getParameter("username"));
+            uData.setEmail(request.getParameter("email"));
+            uData.setFirstName(request.getParameter("firstname"));
+            try {
+                uData.setMiddleName(request.getParameter("middlename"));
+            } catch(Exception e) { }
+            try {
+                uData.setLastName(request.getParameter("lastname"));
+            } catch(Exception e) { }
+            try {
+                uData.setAge(Short.parseShort(request.getParameter("age")));
+            } catch(Exception e) { }
+            try {
+                uData.setGender(request.getParameter("gender").charAt(0));
+            } catch(Exception e) { }
+            uData.setPassword(request.getParameter("password"));
+            UserClient uClient = new UserClient(); 
+            Short id = uClient.getMaxId();
+            int intId = 1;
+            if(id!=null) {
+                intId = id.intValue()+1;
+            }
+            Short newId = new Short(""+intId);
+            uData.setUserId(newId);
+            uClient.createUser(uData);
+            return true;
+        } catch(Exception e) {
+            System.err.println("Failed to register User : "+e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     private boolean processAddEventForm(HttpServletRequest request) {
         try {
             MileData mData = new MileData();
-            
-            
             String sDate = request.getParameter("date");
             SimpleDateFormat sdfDate = new SimpleDateFormat("MM/dd/yyyy");
             Date date = sdfDate.parse(sDate);         

@@ -16,8 +16,8 @@ import java.util.Date;
 public class MileData {
 
     public static Miles getMiles(MileData mData) {
-        Miles mile = new Miles(mData.getId(), mData.getMileType(), mData.getMileDate(), mData.getStartTime(), mData.getEndTime(), mData.getDistance(),mData.getTitle(), mData.getLocation(), mData.getDescription());
-        return mile;
+       Miles mile = new Miles(mData);
+       return mile;
     }
     private Short id;    
     private String mileType;

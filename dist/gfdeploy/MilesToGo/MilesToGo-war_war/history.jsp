@@ -40,7 +40,10 @@
                         <li><a href="/MilesToGo-war/index.jsp">Miles To Go</a></li>
                         <li><a href="/MilesToGo-war/MileController?CMD=ADD_EVENT">Add an Event</a></li>
                         <li class="active"><a href="/MilesToGo-war/MileController?CMD=HISTORY">View History</a></li>
-                    </ul>            
+                    </ul>   
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/MilesToGo-war/MileController?CMD=REGISTER_FORM">Register</a></li>
+                    </ul>
                  </div>
             </nav>
               <div class="row">
@@ -51,16 +54,16 @@
                     <% 
                         MileClient mClient = new MileClient();
                         List<MileData> mDataList = mClient.getMileHistory();
-                        %><table class='table table-hover table-responsive'>
+                        %><div class="table-responsive"><table class='table table-hover table-responsive'>
                             <thead> 
                                 <tr>                        
-                                    <td> Event Name </td>
-                                    <td> Event Type </td>
-                                    <td> Date </td>
-                                    <td> Distance </td>
-                                    <td> Time Taken </td>
-                                    <td> Speed </td>
-                                    <td> Location </td>
+                                    <th> Event Name </th>
+                                    <th> Event Type </th>
+                                    <th> Date </th>
+                                    <th> Distance </th>
+                                    <th> Time Taken </th>
+                                    <th> Speed </th>
+                                    <th> Location </th>
                                 </tr> 
                             </thead> 
                             <tbody>
@@ -98,7 +101,7 @@
                         }
                         %>
                         </tbody>
-                        </table>
+                        </table></div>
                     </article>
                 </div>
               <div class="col-lg-2"/>

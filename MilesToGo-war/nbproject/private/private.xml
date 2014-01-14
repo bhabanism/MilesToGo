@@ -3,11 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/history.jsp</file>
-            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/index.jsp</file>
-            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/addEventForm.jsp</file>
-            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/error.jsp</file>
-            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/css/milesnavbar.css</file>
+            <file>file:/J:/NetbeansProjects/MilesToGo/MilesToGo-war/web/registerUser.jsp</file>
+            <file>file:/J:/NetbeansProjects/MilesToGo/MilesToGo-war/src/java/com/servlet/controller/MileController.java</file>
         </group>
     </open-files>
 </project-private>
