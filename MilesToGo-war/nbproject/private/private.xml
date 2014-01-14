@@ -4,12 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/history.jsp</file>
-            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/css/jquery-ui.css</file>
+            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/index.jsp</file>
             <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/addEventForm.jsp</file>
-            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/css/miles.css</file>
-            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/js/milesfooter.js</file>
-            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/css/redmond/jquery-ui.theme.css</file>
-            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/src/java/com/servlet/controller/MileController.java</file>
+            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/error.jsp</file>
+            <file>file:/D:/Projects/NetBeansProjects/MilesToGo/MilesToGo-war/web/css/milesnavbar.css</file>
         </group>
     </open-files>
 </project-private>

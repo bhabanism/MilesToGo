@@ -19,7 +19,7 @@
          <link href="css/miles.css" rel="stylesheet">
          <link href="css/redmond/jquery-ui.css" rel="stylesheet">
          <link href="css/redmond/jquery-ui.theme.css" rel="stylesheet">
-         
+         <link href="css/milesnavbar.css" rel="stylesheet">
          
          <script src="js/jquery-latest.min.js"></script>
          <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
@@ -29,85 +29,99 @@
          
     </head>
     <body>
-        <header class="row">            
-            <ul class="nav nav-tabs">
-                <li><a href="/MilesToGo-war/index.jsp">Mile To Go</a></li>
-                <li class="active"><a href="/MilesToGo-war/MileController?CMD=ADD_EVENT">Add an Event</a></li>
-                <li><a href="/MilesToGo-war/MileController?CMD=HISTORY">View History</a></li>
-            </ul>            
-         </header>
-        
-       
-          <div class="row">
-            <div class="col-lg-3"><aside></aside></div>
-            <div class="col-lg-5"> 
-                <article>
-                    <form id="addEvent" action="/MilesToGo-war/MileController" role="form" class="form-horizontal">
-                        <div class="form-group">
-                            <input type="hidden" name="CMD" value="ADD_EVENT_FORM_SUBMIT"/>
-                            <div class="row">
-                                 <div class="col-lg-2">
-                                     <label class="control-label">Title</label>
-                                 </div>
-                                 <div class="col-lg-10"><input name="title" type="text" class="required form-control"/></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-2"><label class="control-label">Type of Event</label></div>
-                                <div class="col-lg-10">
-                                    <select name="type" class="required form-control">
-                                        <option value="Cycling">Cycling</option>
-                                        <option value="Running">Running</option>
-                                        <option value="Swimming">Swimming</option>
-                                        <option value="Walking">Walking</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                 <div class="col-lg-2"><label class="control-label">Date</label></div>
-                                 <div class="col-lg-10"><input name="date" id="eventdate" type="text" class="date required form-control"/></div>
-                            </div>
-                            <div class="row">
-                                 <div class="col-lg-2"><label class="control-label">Start Time</label></div>
-                                 <div class="col-lg-10">
-                                     <div class="input-append bootstrap-timepicker-component">
-                                        <input name="starttime" id="starttime"  type="text" class="input-small timepicker-default required form-control"/>
-                                        <span class="add-on"><i class="icon-time"></i></span>
+        <div class="container">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#milesnav">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <!--<a class="navbar-brand active" href="#">Miles To Go</a>                    -->
+                </div>
+            
+                <div  class="collapse navbar-collapse" id="milesnav">            
+                    <ul class="nav navbar-nav">
+                        <li><a href="/MilesToGo-war/index.jsp">Miles To Go</a></li>
+                        <li class="active"><a href="/MilesToGo-war/MileController?CMD=ADD_EVENT">Add an Event</a></li>
+                        <li><a href="/MilesToGo-war/MileController?CMD=HISTORY">View History</a></li>
+                    </ul>            
+                 </div>
+            </nav>
+
+
+              <div class="row">
+                <div class="col-lg-3"><aside></aside></div>
+                <div class="col-lg-5"> 
+                    <article>
+                        <form id="addEvent" action="/MilesToGo-war/MileController" role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <input type="hidden" name="CMD" value="ADD_EVENT_FORM_SUBMIT"/>
+                                <div class="row">
+                                     <div class="col-lg-2">
+                                         <label class="control-label">Title</label>
                                      </div>
-                                 </div>
-                            </div>
-                            <div class="row">
-                                 <div class="col-lg-2"><label class="control-label">End Time</label></div>
+                                     <div class="col-lg-10"><input name="title" type="text" class="required form-control"/></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-2"><label class="control-label">Type of Event</label></div>
                                     <div class="col-lg-10">
+                                        <select name="type" class="required form-control">
+                                            <option value="Cycling">Cycling</option>
+                                            <option value="Running">Running</option>
+                                            <option value="Swimming">Swimming</option>
+                                            <option value="Walking">Walking</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                     <div class="col-lg-2"><label class="control-label">Date</label></div>
+                                     <div class="col-lg-10"><input name="date" id="eventdate" type="text" class="date required form-control"/></div>
+                                </div>
+                                <div class="row">
+                                     <div class="col-lg-2"><label class="control-label">Start Time</label></div>
+                                     <div class="col-lg-10">
                                          <div class="input-append bootstrap-timepicker-component">
-                                            <input name="endtime" id="endtime"  type="text" class="input-small timepicker-default required form-control"/>
+                                            <input name="starttime" id="starttime"  type="text" class="input-small timepicker-default required form-control"/>
                                             <span class="add-on"><i class="icon-time"></i></span>
                                          </div>
                                      </div>
-                            </div>
-                            <div class="row">
-                                 <div class="col-lg-2"><label class="control-label" >Distance</label></div>
-                                 <div class="col-lg-10"><input name="distance" type="text" class="required numeric form-control tooltips" data-toggle="tooltip" title="Please provide distance is kilometers"/></div>
-                            </div>
-                            <div class="row">
-                                 <div class="col-lg-2"><label class="control-label">Location</label></div>
-                                 <div class="col-lg-10"><input name="location" type="text" class="required form-control"/></div>
-                            </div>
-                            <div class="row">
-                                 <div class="col-lg-2"><label class="control-label">Description</label></div>
-                                 <div class="col-lg-10"><textarea  name="description" class="form-control" rows="3"></textarea></div>                       
-                            </div>  
-                            <div class="row">
-                                 <div class="col-lg-2"><label class="control-label"></label></div>
-                                 <div class="col-lg-10"><button type="button" id="addEventButton" class="btn btn-info">Log an Event</button></div>                       
-                            </div>                              
-                        </form>
-                     </div>
-                </article>
+                                </div>
+                                <div class="row">
+                                     <div class="col-lg-2"><label class="control-label">End Time</label></div>
+                                        <div class="col-lg-10">
+                                             <div class="input-append bootstrap-timepicker-component">
+                                                <input name="endtime" id="endtime"  type="text" class="input-small timepicker-default required form-control"/>
+                                                <span class="add-on"><i class="icon-time"></i></span>
+                                             </div>
+                                         </div>
+                                </div>
+                                <div class="row">
+                                     <div class="col-lg-2"><label class="control-label" >Distance</label></div>
+                                     <div class="col-lg-10"><input name="distance" type="text" class="required numeric form-control tooltips" data-toggle="tooltip" title="Please provide distance is kilometers"/></div>
+                                </div>
+                                <div class="row">
+                                     <div class="col-lg-2"><label class="control-label">Location</label></div>
+                                     <div class="col-lg-10"><input name="location" type="text" class="required form-control"/></div>
+                                </div>
+                                <div class="row">
+                                     <div class="col-lg-2"><label class="control-label">Description</label></div>
+                                     <div class="col-lg-10"><textarea  name="description" class="form-control" rows="3"></textarea></div>                       
+                                </div>  
+                                <div class="row">
+                                     <div class="col-lg-2"><label class="control-label"></label></div>
+                                     <div class="col-lg-10"><button type="button" id="addEventButton" class="btn btn-info">Log an Event</button></div>                       
+                                </div>                              
+                            </form>
+                         </div>
+                    </article>
+                </div>
+                <div class="col-lg-4"/> 
             </div>
-            <div class="col-lg-4"/> 
+            <footer>
+                <script src="js/milesfooter.js"></script>
+            </footer>
         </div>
-        <footer>
-            <script src="js/milesfooter.js"></script>
-        </footer>
     </body>
 </html>
