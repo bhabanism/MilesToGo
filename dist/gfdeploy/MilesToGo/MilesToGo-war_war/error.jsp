@@ -23,7 +23,7 @@
             </ul>            
          </div>
          <div class="row">
-            <div class="col-lg-3"><aside>Left Nav</aside></div>
+            <div class="col-lg-3"><aside></aside></div>
             <div class="col-lg-9"> <article> You Made the biggest error of your life! </article></div>
         </div>
     </body>

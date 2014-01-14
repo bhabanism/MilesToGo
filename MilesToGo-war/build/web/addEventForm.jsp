@@ -17,25 +17,29 @@
          <link href="css/bootstrap-timepicker.min.css" rel="stylesheet">
          <link href="css/jquery-ui.css" rel="stylesheet">
          <link href="css/miles.css" rel="stylesheet">
-        <script src="js/jquery-latest.min.js"></script>
-        <script src="js/jquery-ui.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/bootstrap-timepicker.min.js"></script>
+         <link href="css/redmond/jquery-ui.css" rel="stylesheet">
+         <link href="css/redmond/jquery-ui.theme.css" rel="stylesheet">
+         
+         
+         <script src="js/jquery-latest.min.js"></script>
+         <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+         <script src="js/bootstrap.min.js"></script>
+         <script src="js/bootstrap-timepicker.min.js"></script>
          <script src="js/miles.js"></script>
          
     </head>
     <body>
-        <div class="row">            
+        <header class="row">            
             <ul class="nav nav-tabs">
                 <li><a href="/MilesToGo-war/index.jsp">Mile To Go</a></li>
                 <li class="active"><a href="/MilesToGo-war/MileController?CMD=ADD_EVENT">Add an Event</a></li>
                 <li><a href="/MilesToGo-war/MileController?CMD=HISTORY">View History</a></li>
             </ul>            
-         </div>
+         </header>
         
        
           <div class="row">
-            <div class="col-lg-3"><aside>Left Nav</aside></div>
+            <div class="col-lg-3"><aside></aside></div>
             <div class="col-lg-5"> 
                 <article>
                     <form id="addEvent" action="/MilesToGo-war/MileController" role="form" class="form-horizontal">
@@ -81,8 +85,8 @@
                                      </div>
                             </div>
                             <div class="row">
-                                 <div class="col-lg-2"><label class="control-label">Distance</label></div>
-                                 <div class="col-lg-10"><input name="distance" type="text" class="required numeric form-control"/></div>
+                                 <div class="col-lg-2"><label class="control-label" >Distance</label></div>
+                                 <div class="col-lg-10"><input name="distance" type="text" class="required numeric form-control tooltips" data-toggle="tooltip" title="Please provide distance is kilometers"/></div>
                             </div>
                             <div class="row">
                                  <div class="col-lg-2"><label class="control-label">Location</label></div>
@@ -99,7 +103,11 @@
                         </form>
                      </div>
                 </article>
-            </div><div class="col-lg-4"/> 
+            </div>
+            <div class="col-lg-4"/> 
         </div>
+        <footer>
+            <script src="js/milesfooter.js"></script>
+        </footer>
     </body>
 </html>

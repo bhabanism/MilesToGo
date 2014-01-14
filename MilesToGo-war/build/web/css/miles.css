@@ -11,3 +11,17 @@ and open the template in the editor.
 .row {
     padding: 10px;
 }
+
+.tooltips + .tooltip > .tooltip-inner {
+    background-color: #5BC0DE;
+    color: #fff;
+}
+
+ .tooltips + .tooltip > .tooltip-arrow {
+     //background-color: #5BC0DE;
+     border-bottom-color: #5BC0DE;
+ }
+
+ 
+//#428BCA
+//#5BC0DE

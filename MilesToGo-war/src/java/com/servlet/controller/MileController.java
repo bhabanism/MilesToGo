@@ -51,7 +51,7 @@ public class MileController extends HttpServlet {
                 if(status) {
                     response.sendRedirect("/MilesToGo-war/history.jsp"); 
                 } else {
-                    response.sendRedirect("/MilesToGo-war/error.jsp");   
+                    //response.sendRedirect("/MilesToGo-war/error.jsp");   
                 }
                 
                 //response.sendRedirect("/MilesToGo-war/addEventForm.jsp");  
@@ -128,7 +128,10 @@ public class MileController extends HttpServlet {
             //Short id = 1;
             
             Short id = mClient.getMaxId();
-            int intId = id.intValue()+1;
+            int intId = 1;
+            if(id!=null) {
+                intId = id.intValue()+1;
+            }
             Short newId = new Short(""+intId);
             mData.setId(newId);
             mClient.createEvent(mData);    

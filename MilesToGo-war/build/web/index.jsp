@@ -22,9 +22,9 @@
             </ul>            
          </div>
         <div class="row">
-            <div class="col-lg-3"><aside>Left Nav</aside></div>
-            <div class="col-lg-9"> <article> Welcome to Miles To Go! </article></div>           
-            
+            <div class="col-lg-3"><aside></aside></div>
+            <div class="col-lg-5"> <article> Welcome to Miles To Go! </article></div>           
+            <div class="col-lg-4"/>
         </div>
       
       
