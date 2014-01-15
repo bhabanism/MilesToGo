@@ -1,0 +1,18 @@
+Netbeans Workspace creation Steps - 
+
+1. Open Java DB in Netbean and run the DB script provided at - 
+   db seeds/Table Creation.sql
+   
+2. Create a J2EE project MilesToGo. 
+    Create JPA Entity beans from the Tables created above in the package com.ejb.entity
+    Create JPA Session beans for the Entity beans created above in the package com.ejb.session
+    Overwrite the Entity beans code from MilesToGo-ejb / src / java / com / ejb / entity
+    Overwrite the Session beans code from MilesToGo-ejb / src / java / com / ejb / session
+    Copy files from MilesToGo-ejb / src / java / com / mile
+    Copy files from MilesToGo-war / web
+    Copy files from MilesToGo-war / web 
+    Copy files from MilesToGo-war / src / java/ com / servlet / controller
+
+3. Deploy on Glassfish and run. 
+    
+
