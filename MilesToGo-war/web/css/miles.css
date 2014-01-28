@@ -23,7 +23,12 @@ and open the template in the editor.
  }
 
  .navbar-nav>li>a {
-     padding-right: 30px;
+     //padding-right: 30px;
  }
+ 
+ .navbar-nav.navbar-right:last-child { 
+	margin-right : 0px;
+ }
+ 
 //#428BCA
 //#5BC0DE
