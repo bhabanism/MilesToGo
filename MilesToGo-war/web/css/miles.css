@@ -7,7 +7,9 @@ and open the template in the editor.
     Created on : Jan 9, 2014, 12:06:57 AM
     Author     : Mishra
 */
-
+body {
+	padding-top : 70px;
+}
 .row {
     padding: 10px;
 }
@@ -25,7 +27,6 @@ and open the template in the editor.
  .navbar-nav>li>a {
      //padding-right: 30px;
  }
- 
  .navbar-nav.navbar-right:last-child { 
 	margin-right : 0px;
  }
