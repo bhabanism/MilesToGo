@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Mile To Go</title>
+        <title>Miles To Go</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/milesnavbar.css" rel="stylesheet">
         <link href="css/miles.css" rel="stylesheet">
@@ -37,6 +37,7 @@
                         <li><a href="/MilesToGo-war/MileController?CMD=HISTORY">View History</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Login</a></li>
                         <li><a href="/MilesToGo-war/MileController?CMD=REGISTER_FORM">Register</a></li>
                     </ul>
                  </div>
