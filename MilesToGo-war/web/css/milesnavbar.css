@@ -26,7 +26,7 @@
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
     color: #000000;
-    background-color: #efe;
+    background-color: #D0FA58;
 }
 .navbar-default .navbar-nav > .dropdown > a .caret {
     border-top-color: #ffffff;
@@ -44,11 +44,11 @@
     border-bottom-color: #000000;
 }
 .navbar-default .navbar-toggle {
-    border-color: #efe;
+    border-color: #D0FA58;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #efe;
+    background-color: #D0FA58;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #ffffff;
